@@ -1,1 +1,1 @@
-# Rock Paper Scissor Game in Python
+# Rock Paper Scissor Game using Random Module in Python
