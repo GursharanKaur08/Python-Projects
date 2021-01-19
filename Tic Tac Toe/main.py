@@ -5,13 +5,11 @@ import random as r
 #Function to define a button.
 
 def button(frame):        
+    
     b=Button(frame,padx=1,bg="papaya whip",width=3,text="",font=('arial',60,'bold'),relief="sunken",bd=10)
-
     return b
 
-   
-
-    #Function to change the operand for the next player.
+#Function to change the operand for the next player.
 
 def change_a():          
 
@@ -20,23 +18,18 @@ def change_a():
     for i in ['O','X']:
 
         if not(i==a):
-
             a=i
-
             break
 
 # Reset the game.
 
 def reset():              
-
     global a
 
     for i in range(3):
-
         for j in range(3):
 
                 b[i][j]["text"]=" "
-
                 b[i][j]["state"]=NORMAL
 
     a=r.choice(['O','X'])
@@ -44,26 +37,22 @@ def reset():
 # create function to check a victory or Draw.
 
 def check():               
-
     for i in range(3):
 
            if(b[i][0]["text"]==b[i][1]["text"]==b[i][2]["text"]==a or b[0][i]["text"]==b[1][i]["text"]==b[2][i]["text"]==a):
 
                     messagebox.showinfo("Congrats!!","'"+a+"' has won")
-
                     reset()
 
-    if(b[0][0]["text"]==b[1][1]["text"]==b[2][2]["text"]==a or b[0][2]["text"]==b[1][1]["text"]==b[2][0]["text"]==a):
+           if(b[0][0]["text"]==b[1][1]["text"]==b[2][2]["text"]==a or b[0][2]["text"]==b[1][1]["text"]==b[2][0]["text"]==a):
 
-        messagebox.showinfo("Congrats!!","'"+a+"' has won")
+                    messagebox.showinfo("Congrats!!","'"+a+"' has won")
+                    reset()  
 
-        reset()  
+           elif(b[0][0]["state"]==b[0][1]["state"]==b[0][2]["state"]==b[1][0]["state"]==b[1][1]["state"]==b[1][2]["state"]==b[2][0]["state"]==b[2][1]["state"]==b[2][2]["state"]==DISABLED):
 
-    elif(b[0][0]["state"]==b[0][1]["state"]==b[0][2]["state"]==b[1][0]["state"]==b[1][1]["state"]==b[1][2]["state"]==b[2][0]["state"]==b[2][1]["state"]==b[2][2]["state"]==DISABLED):
-
-        messagebox.showinfo("Tied!!","The match ended in a draw")
-
-        reset()
+                    messagebox.showinfo("Tied!!","The match ended in a draw")
+                    reset()
 
 def click(row,col):
 
@@ -99,9 +88,7 @@ for i in range(3):
         for j in range(3):
 
                 b[i].append(button(root))
-
                 b[i][j].config(command= lambda row=i,col=j:click(row,col))
-
                 b[i][j].grid(row=i,column=j)
 
 label=Label(text=a+"'s Chance",font=('arial',20,'bold'))
