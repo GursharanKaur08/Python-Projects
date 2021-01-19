@@ -11,24 +11,28 @@ while True:
         print('|    o    |')
         print('|         |')
         print('-----------')
+        
     elif dice_number == 2:
         print('-----------')
         print('|o        |')
         print('|         |')
         print('|        o|')
         print('-----------')
+        
     elif dice_number == 3:
         print('-----------')
         print('|o        |')
         print('|    o    |')
         print('|        o|')
         print('-----------')
+        
     elif dice_number == 4:
         print('-----------')
         print('|o       o|')
         print('|         |')
         print('|o       o|')
         print('-----------')
+        
     elif dice_number == 5:
         print('-----------')
         print('|o       o|')
@@ -41,7 +45,9 @@ while True:
         print('|o       o|')
         print('|o       o|')
         print('-----------')
+        
     enter = input("$$$---Enter Y/n for continue/stop rolling the dice---$$$\n")
     enter = enter.upper()
+    
     if enter != 'Y':
         break
