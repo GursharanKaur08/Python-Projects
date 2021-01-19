@@ -23,7 +23,9 @@ input_char = input('Enter r|s: ')
 system = System(input_char)
 if input_char=='r':
     system.restart()
+    
 elif input_char=='s':
     system.shutdown()
+    
 else:
     system.exit_prg()
