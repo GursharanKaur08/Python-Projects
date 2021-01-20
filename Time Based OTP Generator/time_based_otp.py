@@ -12,7 +12,6 @@ with open('secret_key.txt','r') as rf:
 
 # print(base_32_secret_key)
 
-
 # OTP generation
 
 Timebasedotp = pyotp.TOTP(base_32_secret_key)
@@ -24,9 +23,11 @@ def verification(time_gap, Entered_otp, otp, Timebasedotp):
     if (time_gap)<30 and (Entered_otp==otp):
         print("Hello User u are successfully verified.$$")
         return
+    
     elif (time_gap)<30 and (Entered_otp!=otp):
         print("Entered OTP is not correct. Hence u are not verified. That's why we have resent u a new OTP.")
         resend_otp(Timebasedotp)
+    
     elif (time_gap)>=30:
         print("Time up!!!")
         resend_otp(Timebasedotp)
@@ -51,6 +52,7 @@ def resend_otp(Timebasedotp):
 
 while True:
     new_current_otp = Timebasedotp.now()
+    
     if new_current_otp !=current_otp:
         print(f'Current_otp: {new_current_otp}')
         start = timer()
