@@ -2,7 +2,7 @@ import random
 
 number = random.randint(1,10)
 for i in range(0,3):
-    user = int(input("guess the number: "))
+    user = int(input("guess the number: 7"))
     if user == number:
         print("Hurray!!")
         print("you guessed the number right it's ",number)
