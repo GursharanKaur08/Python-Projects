@@ -1,5 +1,9 @@
 This repository is about some basic python projects which are listed below :
 
+-> Alarm Clock
+
+-> Binary Search
+
 -> Dice Rolling Simulator
 -> Indian Flag
 -> Rock Paper Scissor
